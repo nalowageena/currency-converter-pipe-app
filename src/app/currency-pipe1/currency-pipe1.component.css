@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; 
+}
+
+#curValueB4, #curValueAfter, #afterCur, #beforeCur{
+    height: 100%;
+    /* width: 100%; */
+    border: 1px solid #dadce0;
+    font-size: 16px;
+    padding: 0 20px;
+    outline: none;
+    z-index: 1;
+    border-radius: 7px;
+}
+#curValueB4, #curValueAfter{
+    background: none;
+    color: white;
+    width: 65%;
+}
+#afterCur, #beforeCur{
+    width: 30%;
+    font-weight: 600;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    height: 100vh;
+    width: 80%;
+    margin: auto;
+}
+.input-output{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 25px rgba(143, 160, 200, 0.4);
+    padding: 40px 40px;
+    background-color: #000000;
+    color: white;
+}
+.title{
+    font-size: 210%;
+    margin: 100px;
+    text-transform: capitalize;
+}
+.before, .after{
+    height: 80%;
+    display: flex;
+    justify-content: space-between;
+}
+#curValueB4:focus, #curValueAfter:focus{
+    border: 2px solid lightblue;
+}
+p{
+    margin: 10px;
+    padding: 10px;
+}
