@@ -12,8 +12,8 @@ export class CurrencyPipe1Component implements OnInit {
   ngOnInit(): void {}
 
   public curValBef;
-  public curBefore = '';
-  public curAfter = '';
+  public curBefore = 'XAF';
+  public curAfter = 'XAF';
   public curValueAfter;
   currencies = ['XAF', 'USD', 'EURO', 'NAIRA', 'JPY', 'CNY'];
 

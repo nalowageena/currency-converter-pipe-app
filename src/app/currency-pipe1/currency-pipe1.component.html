@@ -7,7 +7,7 @@
         <option
           *ngFor="let curBefore of currencies"
           (click)="getcurBefore($event)"
-          [ngValue]="curAfter"
+          [ngValue]="curBefore"
         >
           {{ curBefore }}
         </option>
@@ -20,7 +20,7 @@
         [(ngModel)]="curValBef"
       />
     </div>
-    <p>TO</p>
+    <p id="to">TO</p>
     <div class="after">
       <!-- CURRENCY VALUE AFTER -->
       <select name="curAfter" id="afterCur" [(ngModel)]="curAfter">
@@ -41,4 +41,5 @@
       />
     </div>
   </div>
+  <p>{{curValBef}}{{curBefore}} equals {{curValueAfter}}{{curAfter}}</p>
 </div>

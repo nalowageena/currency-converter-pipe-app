@@ -5,7 +5,6 @@ import { Pipe, PipeTransform } from '@angular/core';
 export class CurrencyConverter implements PipeTransform {
   public curValAfter = 0;
   transform(curValBef: number, curBefore: String, curAfter: String): number {
-    
     // this.curValAfter = this.convert1(curValBef, curBefore, 'XAF');
     // this.curValAfter = this.convert1(this.curValAfter, 'XAF', curAfter);
     this.curValAfter = this.convert2(curValBef, curBefore, curAfter);
@@ -13,6 +12,8 @@ export class CurrencyConverter implements PipeTransform {
   }
 
   // convert all currencies to cfa francs before converting it to another currency
+
+  // ! This method does not work perfectly.. still need to do some modifications
   convert1(curValBef: number, curBefore: String, curAfter: String): number {
     if ((curAfter = 'XAF')) {
       if ((curBefore = 'XAF')) {
@@ -76,7 +77,7 @@ export class CurrencyConverter implements PipeTransform {
     currencies.set('XAF', 1);
     currencies.set('USD', 575.5);
     currencies.set('EURO', 655.957);
-    currencies.set('NAIRA', 156.25);
+    currencies.set('NAIRA', 1.41);
     currencies.set('JPY', 5.075);
     currencies.set('CNY', 90.0);
 
@@ -86,9 +87,8 @@ export class CurrencyConverter implements PipeTransform {
           var ratio =
             Number(currencies.get(String(curBefore))) /
             Number(currencies.get(String(curAfter)));
-          this.curValAfter =
-            ratio * curValBef;
-            console.log(this.curValAfter);
+          this.curValAfter = ratio * curValBef;
+          console.log(this.curValAfter);
         }
       }
     }
