@@ -3,7 +3,7 @@
   <div class="input-output">
     <div class="before">
       <!-- CURRENCY VALUE BEFORE -->
-      <select name="beforeCur" id="beforeCur" [(ngModel)]="curBefore">
+      <select name="curBefore" id="beforeCur" [(ngModel)]="curBefore">
         <option
           *ngFor="let curBefore of currencies"
           (click)="getcurBefore($event)"
@@ -14,20 +14,18 @@
       </select>
       <input
         type="text"
-        name="curValueB4"
+        name="curValBef"
         id="curValueB4"
         value="{{ curValBef }}"
-        (keydown.enter)="getcurValBef($event)"
         [(ngModel)]="curValBef"
       />
     </div>
     <p>TO</p>
     <div class="after">
       <!-- CURRENCY VALUE AFTER -->
-      <select name="afterCur" id="afterCur" [(ngModel)]="curAfter">
+      <select name="curAfter" id="afterCur" [(ngModel)]="curAfter">
         <option
           *ngFor="let curAfter of currencies"
-          (click)="getcurAfter($event)"
           [ngValue]="curAfter"
         >
           {{ curAfter }}

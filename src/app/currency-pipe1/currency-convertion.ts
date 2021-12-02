@@ -6,8 +6,8 @@ export class CurrencyConverter implements PipeTransform {
   public curValAfter = 0;
   transform(curValBef: number, curBefore: String, curAfter: String): number {
     
-    // curValAfter = this.convert1(curValBef, curBefore, 'XAF');
-    // curValAfter = this.convert1(curValAfter, 'XAF', curAfter);
+    // this.curValAfter = this.convert1(curValBef, curBefore, 'XAF');
+    // this.curValAfter = this.convert1(this.curValAfter, 'XAF', curAfter);
     this.curValAfter = this.convert2(curValBef, curBefore, curAfter);
     return this.curValAfter;
   }
