@@ -86,9 +86,9 @@ export class CurrencyConverter implements PipeTransform {
           var ratio =
             Number(currencies.get(String(curBefore))) /
             Number(currencies.get(String(curAfter)));
-            console.log(ratio);
           this.curValAfter =
             ratio * curValBef;
+            console.log(this.curValAfter);
         }
       }
     }

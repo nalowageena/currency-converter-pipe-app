@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { CurrencyConverter } from './currency-convertion';
 
 @Component({
   selector: 'app-currency-pipe1',
@@ -16,13 +17,16 @@ export class CurrencyPipe1Component implements OnInit {
   public curValueAfter;
   currencies = ['XAF', 'USD', 'EURO', 'NAIRA', 'JPY', 'CNY'];
 
-  public getcurAfter(event) {
+  getcurAfter(event) {
     this.curAfter = event.target.value;
+    console.log(this.curAfter);
   }
-  public getcurBefore(event) {
+  getcurBefore(event) {
     this.curBefore = event.target.value;
+    console.log(this.curBefore);
   }
-  public getcurValBef(event){
+  getcurValBef(event){
     this.curValBef = event.target.value;
+    console.log(this.curValBef);
   }
 }

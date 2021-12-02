@@ -1,22 +1,46 @@
 <div class="container">
-    <h1 class="title">currency conversion app</h1>
-   <div class="input-output">
-       <div class="before">
-            <!-- CURRENCY VALUE BEFORE -->
-<input type="text" name="curValueB4" id="curValueB4" value="{{ curValBef }}"  (keydown.enter)="getcurValBef($event)" [(ngModel)]='curValBef' />
-<select name="beforeCur" id="beforeCur">
-  <option *ngFor="let curBefore of currencies" (click)="getcurBefore($event)" [ngValue]='curAfter'>{{ curBefore }}</option>
-</select>
-
-       </div>
-<p>TO</p>
-<div class="after">
-    <!-- CURRENCY VALUE AFTER -->
-<input type="text" name="curValueAfter" id="curValueAfter" value="{{ curValBef | currencyconverter: curBefore: curAfter}}" [(ngModel)]='curValueAfter' disabled/>
-<select name="afterCur" id="afterCur">
-  <option *ngFor="let curAfter of currencies" (click)="getcurAfter($event)" [ngValue]='curAfter'>{{ curAfter }}</option>
-</select>
-
-</div>
-   </div>
+  <h1 class="title">currency conversion app</h1>
+  <div class="input-output">
+    <div class="before">
+      <!-- CURRENCY VALUE BEFORE -->
+      <select name="beforeCur" id="beforeCur" [(ngModel)]="curBefore">
+        <option
+          *ngFor="let curBefore of currencies"
+          (click)="getcurBefore($event)"
+          [ngValue]="curAfter"
+        >
+          {{ curBefore }}
+        </option>
+      </select>
+      <input
+        type="text"
+        name="curValueB4"
+        id="curValueB4"
+        value="{{ curValBef }}"
+        (keydown.enter)="getcurValBef($event)"
+        [(ngModel)]="curValBef"
+      />
+    </div>
+    <p>TO</p>
+    <div class="after">
+      <!-- CURRENCY VALUE AFTER -->
+      <select name="afterCur" id="afterCur" [(ngModel)]="curAfter">
+        <option
+          *ngFor="let curAfter of currencies"
+          (click)="getcurAfter($event)"
+          [ngValue]="curAfter"
+        >
+          {{ curAfter }}
+        </option>
+      </select>
+      <input
+        type="text"
+        name="curValueAfter"
+        id="curValueAfter"
+        value="{{ curValBef | currencyconverter: curBefore:curAfter }}"
+        [(ngModel)]="curValueAfter"
+        disabled
+      />
+    </div>
+  </div>
 </div>

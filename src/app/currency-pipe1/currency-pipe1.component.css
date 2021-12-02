@@ -60,7 +60,7 @@ html, body{
 .before, .after{
     height: 100%;
     display: flex;
-    flex-direction: column-reverse;
+    flex-direction: column;
     justify-content: space-between;
     align-items: flex-end;
 }
